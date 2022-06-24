@@ -1,0 +1,61 @@
+<div *ngIf="cakeData" class="container mt-4">
+    <h1>{{cakeData.name}}</h1>
+    <section class="cake-details mb-5 pt-4 pb-4">
+    <div  class="col-md-12 row">
+      <div  class="col-md-4 mb-4 mb-md-0">
+        <div  class="mdb-lightbox">
+          <div appHighlight  class="row product-gallery mx-1">
+            <div  class="col-12 mb-0">
+              <div  class="view overlay rounded z-depth-1 main-img">
+                <a href={{cakeData.image}} data-size="710x823">
+                  <img src={{cakeData.image}}   class="img-fluid z-depth-1" style="width:100%"/>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5>{{cakeData.name}}</h5>
+        <p class="mb-2 text-muted text-uppercase small">{{cakeData.reviews}} reviews</p>
+        <p><span class="mr-1"><strong>{{cakeData.price | currency:"INR"}}</strong></span></p>
+        <p class="pt-1">{{cakeData.description}}</p>
+        <div class="table-responsive">
+          <table class="table table-sm table-borderless mb-0">
+            <tbody>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Flavour</strong></th>
+                <td>{{cakeData.flavour}}</td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Ingredients</strong></th>
+                <td>{{cakeData.ingredients.join()}}</td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Occasion</strong></th>
+                <td>{{cakeData.type}}</td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Weight</strong></th>
+                <td>{{cakeData.weight}} kg</td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Weight</strong></th>
+
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+        <hr />
+        <button  *ngIf="!isAdding" (click)="addToCart()"  type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button> 
+        <!-- <button *ngIf="!isAdding" (click)="addToCart()"  type="button" class="btn btn-light btn-md mr-1 mb-2"><i
+            class="fas fa-shopping-cart pr-2"></i>Add to cart</button> -->
+        <button *ngIf="isAdding" disabled  type="button" class="btn btn-light btn-md mr-1 mb-2"><i
+              class="fas fa-shopping-cart pr-2"></i>Adding to cart... Please Wait</button>
+        <!-- <button type="button" class="btn btn-light btn-md mr-1 mb-2" disabled><i
+            class="fas fa-shopping-cart pr-2"></i> Please wait... Adding to cart</button> -->
+      </div>
+    </div>
+  
+  </section></div>

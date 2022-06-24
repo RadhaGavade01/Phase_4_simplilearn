@@ -1,0 +1,7 @@
+.container{
+    width:70%;
+    margin:1em auto;
+}
+.form-group,button{
+    margin-top:1em;
+}

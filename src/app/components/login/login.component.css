@@ -1,0 +1,11 @@
+.login-container{
+    width:40%;
+    margin:1em auto;
+    padding:1em;
+    background-color:rgba(204, 204, 204, 0.347);
+}
+
+.form-group,button{
+    margin-top:1em;
+}
+

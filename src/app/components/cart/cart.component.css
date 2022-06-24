@@ -1,0 +1,7 @@
+/* Style buttons */
+
+  
+  /* Darker background on mouse-over */
+  .inc_dec:hover {
+    background-color: RoyalBlue;
+  }

@@ -1,0 +1,42 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems ; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.name}}</td>
+            <td><img style="height: 60px; width:60px" [src]="item.image" alt=""></td>
+            <td>{{item.price}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.quantity * item.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Total Amount: $ {{totalAmount}}.00</h3>
+
+      <div *ngIf="userDetails" style="margin-top:2em;">
+          <h4>Your Billing Address</h4>
+          <p>Name:{{userDetails.name}}</p>
+          <p>Address:{{userDetails.address}}</p>
+          <p>City:{{userDetails.city}}</p>
+          <p>Pincode:{{userDetails.pincode}}</p>
+      </div>
+
+      <div *ngIf="!userDetails">
+        <h4>Please add billing address </h4>
+      </div>
+      <div class="d-flex flex-wrap justify-content-between " style="height: 50px;">
+         
+          <button type="button" class="btn btn-primary" (click)="order()">Place Order</button>
+    </div>
+</div>
+

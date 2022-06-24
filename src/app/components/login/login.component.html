@@ -1,0 +1,26 @@
+<div class="login-container">
+            <h3 align="center">Login</h3>
+
+            <div *ngIf="responseError" class="form-group">
+              <label class="alert alert-danger" for="">{{responseError}}</label>
+          </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input  type="email" [(ngModel)]="userDetail.email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+        
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input [(ngModel)]="userDetail.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="form-group">
+              <a routerLink="/signup" class="link-primary">New user? Signup Here</a>
+            </div>
+
+            <div class="form-group">
+              <a class="link-primary">Forget Password</a>
+            </div>
+      
+            <button (click)="login()" type="submit" class="btn btn-primary">Submit</button>
+</div>

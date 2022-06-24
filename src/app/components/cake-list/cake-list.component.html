@@ -1,0 +1,31 @@
+<style>
+    .main{
+      margin:2em;
+    }
+
+    .filter-container{
+        display:flex;
+        flex-direction: row;
+        width:30%;
+        margin-top:2em;
+        justify-content:space-evenly;
+    }
+    
+</style>
+
+
+<div class="main">
+      <h2>Discover our cakes!!</h2>
+      <div class="filter-container">
+          <h5>Sort by |</h5>
+          <p (click)="ascSort()" id="t">Low to high</p> |
+          <p (click)="dscSort()">High to low</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4"  *ngFor="let cake of cakes">
+          <app-cake [cakedata]="cake"></app-cake>
+          </div>
+      </div>
+</div>
+

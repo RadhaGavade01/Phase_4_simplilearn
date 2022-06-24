@@ -1,0 +1,33 @@
+
+<div *ngIf="previous_orders"class="container">
+    <p>{{previous_orders.length}} orders</p>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Order Id</th>
+            <th scope="col">Order Date</th>
+            <th scope="col">Total Price</th>
+            <th scope="col">Mode of payment</th>
+            <th scope="col">Status of Order</th>
+            <th scope="col">View orders</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of previous_orders ; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.orderid}}</td>
+            <td>{{item.orderdate}}</td>
+            <td>{{item.price | currency : "INR"}}</td>
+            <td>{{item.mode}}</td>
+            <td *ngIf="item.pending">Pending</td>
+            <td><button (click)="viewpreviousCakeoders(i)" type="button" class="btn btn-outline-success"><i class="bi bi-cart"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+<div *ngIf="!previous_orders" style="text-align:center;">
+    <h2>Your Cart is empty</h2>
+</div>
+

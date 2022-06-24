@@ -1,0 +1,15 @@
+
+ <div (click)="detail()" class="product-card">
+
+        <!--Image Container-->
+        <div class="image">
+            <img src={{cakedata.image}} alt={{cakedata.name}} style="width:100%;height:100%;object-fit: cover;">
+        </div>
+
+        <!--Product Info-->
+        <div class="info">
+            <h4>{{cakedata.name}}</h4>
+            <p> {{cakedata.price | currency:"INR"}}</p>
+           
+        </div>
+ </div>

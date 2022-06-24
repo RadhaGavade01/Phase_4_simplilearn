@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div  class="container-fluid">
+      <!-- Data Binding  -->
+    <a class="navbar-brand" routerLink="/">{{projectTitle}}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- name is must if input boxes are used inside form tag otherwise not -->
+          <form class="d-flex">
+              <input  name="search" [(ngModel)]="searchText" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button  (click)="search()" class="btn btn-primary" type="submit"><fa-icon [icon]="faSearch"></fa-icon></button>
+          </form>
+      </ul>
+
+      <div class="d-flex justify-content-between" style="width:30%;">
+        <button *ngIf="activeUser" type="button" class="btn btn-outline-success" routerLink="/previous-orders">My Orders</button>
+        <button *ngIf="isAdmin" type="button" class="btn btn-outline-warning" routerLink="/addcake">Add New Cake</button>
+          <button style="margin-right: 20px;" routerLink="/cart" *ngIf="activeUser" class="btn btn-warning position-relative mr-5"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{length}}
+          </span><fa-icon [icon]="faCartShopping"></fa-icon></button>
+          <button (click)="logout()" *ngIf="activeUser" class="btn btn-danger ml-5"><fa-icon [icon]="faSignout"></fa-icon></button>
+      </div>
+      <div class="d-flex">
+        <button *ngIf="!activeUser" routerLink="/login" class="btn btn-success" type="submit">Login</button>
+      </div>
+    </div>
+  </div>
+</nav>

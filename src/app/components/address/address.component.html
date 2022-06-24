@@ -1,0 +1,57 @@
+<div class="container">
+    <form [formGroup]="addressform" (submit)="addressform.valid && addAddress()"> 
+      
+    <div class="form-group mt-3">
+        <label for="">Name</label>
+        <input formControlName="name" required [(ngModel)]="userDetail.name"  type="text" class="form-control">
+        <div *ngIf="addressform.controls['name'].invalid && (addressform.controls['name'].dirty || addressform.controls['name'].touched)" class="alert">
+            <div style=color:red *ngIf="addressform.controls['name'].errors.required">
+            Please enter your name
+          </div>
+        </div>
+    </div>
+
+    <div class="form-group mt-3">
+        <label for="">Address</label>
+        <input formControlName="address" required [(ngModel)]="userDetail.address"  type="text" class="form-control">
+        <div *ngIf="addressform.controls['address'].invalid && (addressform.controls['address'].dirty || addressform.controls['address'].touched)" class="alert">
+            <div  style=color:red *ngIf="addressform.controls['address'].errors.required">
+            Please enter your address
+          </div>
+        </div>
+    </div>
+
+     <div class="form-group mt-3">
+        <label for="">City</label>
+        <input formControlName="city" required [(ngModel)]="userDetail.city"  type="text" class="form-control">
+        <div *ngIf="addressform.controls['city'].invalid && (addressform.controls['city'].dirty || addressform.controls['city'].touched)" class="alert">
+            <div  style=color:red *ngIf="addressform.controls['city'].errors.required">
+            Please enter your city
+          </div>
+        </div>
+    </div> 
+
+    <div class="form-group mt-3">
+        <label for="">Pincode</label>
+        <input formControlName="pincode" required [(ngModel)]="userDetail.pincode"  type="text" class="form-control">
+        <div *ngIf="addressform.controls['pincode'].invalid && (addressform.controls['pincode'].dirty || addressform.controls['pincode'].touched)" class="alert">
+            <div  style=color:red *ngIf="addressform.controls['pincode'].errors.required">
+            Please enter your pincode
+          </div>
+        </div>
+    </div>
+    
+    <div class="form-group mt-3">
+        <label for="">Phone no</label>
+        <input formControlName="phone_no" required [(ngModel)]="userDetail.phone_no"  type="text" class="form-control">
+        <div *ngIf="addressform.controls['phone_no'].invalid && (addressform.controls['phone_no'].dirty || addressform.controls['phone_no'].touched)" class="alert">
+            <div  style=color:red *ngIf="addressform.controls['phone_no'].errors.required">
+            Please enter your phone no
+          </div>
+        </div>
+    </div>
+
+
+    <button style="margin-top:1em" type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

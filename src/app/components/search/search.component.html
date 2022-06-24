@@ -1,0 +1,8 @@
+
+
+<div class="row">
+    <h4>{{searchItems.length}} results found</h4> 
+    <div class="col-md-4"  *ngFor="let cake of searchItems">
+        <app-cake [cakedata]="cake"></app-cake>
+        </div>
+</div>

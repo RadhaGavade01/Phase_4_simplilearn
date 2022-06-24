@@ -1,0 +1,27 @@
+.product-card{
+    width:100%;
+    background-color:rgba(221, 221, 221, 0.285);
+    height:20em;
+    margin:1em auto;
+}
+.image{
+    height:50%;
+    background-color:yellow;
+}
+
+.info{
+    text-align:center;
+    padding:0.5em;
+
+}
+
+.bottom-row{
+    display:flex;
+    justify-content:space-around;
+    flex-direction:row;
+}
+
+p{
+    font-weight: bold;
+}
+
